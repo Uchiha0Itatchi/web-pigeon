@@ -374,11 +374,19 @@ main.container.profile .messages .messages-container .msg, main.container.profil
     margin: 20px;
     padding: 10px;
     position: relative;
+    max-width: 100%;
+    word-break: break-all;
 }
 main.container.profile .messages .messages-container .msg p, main.container.profile .messages .fav-messages-container .msg p{
     color: #F88F01;
     /*  Edit direction with js  */
     direction: ltr;
+    max-width: 100%;
+    word-break: break-all;
+}
+.msg-date{
+    font-size: 16px;
+    opacity: 0.8;
 }
 main.container.profile .messages .messages-container .msg span, main.container.profile .messages .fav-messages-container .msg span{
     position: absolute;

@@ -20,6 +20,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="theme-color" content="#2b2b2b">
+    <meta name="msapplication-navbutton-color" content="#2b2b2b">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2b2b2b">
+    <meta name="description" content="Web-Pigeon is a website where you can send and receive messages without knowing sender name.">
+    <meta name="keywords" content="web-pigeon, Ahmed Saber, Full Stack Web Developer">
+    <meta name="author" content="Ahmed Saber, ahmed0saber33@gmail.com">
+    <meta name="og:title" content="Web Pigeon">
+    <meta name="og:description" content="Web-Pigeon is a website where you can send and receive messages without knowing sender name.">
+    
+    <meta property="og:image" content="https://drive.google.com/u/0/uc?id=1cW0Xb57DLj7OZbntxsesjZrr4Gh9LLll&export=download">
+    <link rel="icon" href="https://drive.google.com/u/0/uc?id=1cW0Xb57DLj7OZbntxsesjZrr4Gh9LLll&export=download" type="image/x-icon">
+
+    <meta name="og:type" content="web-pigeon">
+    <meta name="og:email" content="ahmed0saber33@gmail.com">
+    <meta name="og:phone_number" content="+201208611892">
+    <meta name="og:country-name" content="Egypt">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,9 +71,9 @@
                 
             </div>
             <div class="text-container">
-                <div>
+            <div>
                     <h1><?php echo $row['username']?></h1>
-                    <p>Hello, I'm using Web Pigeon</p>
+                    <p><?php echo $row['bio']?></p>
                 </div>
                 <div class="profile-btns">
                     <form method="POST" action="" enctype="multipart/form-data">
@@ -71,12 +88,11 @@
                                 </div>
                                 <div class="modal-body">
                                     <input type="file" name="image" class="imgfile" accept="image/x-png,image/gif,image/jpeg,image/jpg">
-                                    <button type="submit" name="upload" class="next action-button" >Upload</button> <button type="button" name="previous" class="previous action-button-previous">Cancel</button>
+                                    <button type="submit" name="upload" class="next action-button" >Upload</button> <button type="button" name="previous" class="previous action-button-previous" onclick="modal.style.display = 'none'">Cancel</button>
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <button><i class="fa fa-image"></i> Use an avatar</button>
                 </div>
             </div>
         </section>
@@ -101,7 +117,7 @@
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="by">
-                <span>© 2022 Copyright : Ahmed Saber</span>
+                <span>© 2022 Copyright : Ahmed Saber & Hassan El-Deghedy</span>
             </div>
             <div>
                 <a href="#"><i class="fa fa-facebook"></i></a>
