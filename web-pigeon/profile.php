@@ -31,12 +31,29 @@
         $image = $row['img'];
     }
 
-    $incoming_msg_id = $row2['incoming_msg_id'];
+    $incoming_msg_id = $unique_id
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="theme-color" content="#2b2b2b">
+    <meta name="msapplication-navbutton-color" content="#2b2b2b">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2b2b2b">
+    <meta name="description" content="Web-Pigeon is a website where you can send and receive messages without knowing sender name.">
+    <meta name="keywords" content="web-pigeon, Ahmed Saber, Full Stack Web Developer">
+    <meta name="author" content="Ahmed Saber, ahmed0saber33@gmail.com">
+    <meta name="og:title" content="Web Pigeon">
+    <meta name="og:description" content="Web-Pigeon is a website where you can send and receive messages without knowing sender name.">
+    
+    <meta property="og:image" content="https://drive.google.com/u/0/uc?id=1cW0Xb57DLj7OZbntxsesjZrr4Gh9LLll&export=download">
+    <link rel="icon" href="https://drive.google.com/u/0/uc?id=1cW0Xb57DLj7OZbntxsesjZrr4Gh9LLll&export=download" type="image/x-icon">
+
+    <meta name="og:type" content="web-pigeon">
+    <meta name="og:email" content="ahmed0saber33@gmail.com">
+    <meta name="og:phone_number" content="+201208611892">
+    <meta name="og:country-name" content="Egypt">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,7 +95,8 @@
                     <a href="logout.php?logout_id=<?php echo $row['unique_id']; ?>">Log out</a>
                     <a class="copylink" onclick="navigator.clipboard.writeText(`
                     <?php
-                        $url = explode('/', 'http://localhost/work/web-pigeon/profile.php');
+                        $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                        $url = explode('/', $actual_link);
                         array_pop($url);
                         $url2=implode("/",$url) ;
                         $url3 = '/send.php?id='.$row['unique_id'];
@@ -124,7 +142,7 @@
                                 <i class="fa fa-star" onclick="add_to_fav(this)"></i>
                                 <p>'. $row['msg'].'</p>
                                 <span>'.$i.'</span>
-                                <p>'.$row['date'].'</p>
+                                <p class="msg-date">'.$row['date'].'</p>
 
                             </div>
                             ';
@@ -142,7 +160,7 @@
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="by">
-                <span>© 2022 Copyright : Ahmed Saber</span>
+                <span>© 2022 Copyright : Ahmed Saber & Hassan El-Deghedy</span>
             </div>
             <div>
                 <a href="#"><i class="fa fa-facebook"></i></a>
